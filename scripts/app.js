@@ -89,8 +89,8 @@
     
     nasLocalBtn.addEventListener("click", function(e) {
       e.preventDefault();
-      // 直接跳转到 NAS2 (外网)
-      window.open('http://nas2.dreamchaser.ink', '_blank');
+      // 直接跳转到 NAS (内网)
+      window.open('http://nas.dreamchaser.ink', '_blank');
     });
   }
 

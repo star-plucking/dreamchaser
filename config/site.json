@@ -4,17 +4,17 @@
   "promoVideo": "assets/promo.mp4",
   "gallery": [
     {
-      "image": "assets/gallery/DSC_8270.jpg",
+      "image": "assets/gallery/DSC_8270.JPG",
       "title": "机器人测试现场",
       "description": "在复杂地形中进行自主导航测试，验证系统的稳定性和鲁棒性。"
     },
     {
-      "image": "assets/gallery/DSC_8295.jpg", 
+      "image": "assets/gallery/DSC_8295.JPG", 
       "title": "团队协作研发",
       "description": "多学科背景的队员协同工作，共同解决技术难题。"
     },
     {
-      "image": "assets/gallery/DSC_8334.jpg",
+      "image": "assets/gallery/DSC_8334.JPG",
       "title": "比赛获奖时刻",
       "description": "在机器人竞赛中获得优异成绩，展现团队实力。"
     }

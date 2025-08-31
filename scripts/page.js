@@ -34,13 +34,13 @@
   function setAttr(id, attr, value) { const el = document.getElementById(id); if (el) el.setAttribute(attr, value); }
 
   function initNasButton() {
-    const nasLocalBtn = document.getElementById("nas-local");
+    const nasLocalBtn = document.getElementById("nasLocalBtn");
     if (!nasLocalBtn) return;
     
     nasLocalBtn.addEventListener("click", function(e) {
       e.preventDefault();
-      // 直接跳转到 NAS2 (外网)
-      window.open('http://nas2.dreamchaser.ink', '_blank');
+      // 直接跳转到 NAS (内网)
+      window.open('http://nas.dreamchaser.ink', '_blank');
     });
   }
 
@@ -49,11 +49,8 @@
     if (!el) return;
     const md = await fetchText(mdPath);
     
-    // 处理图片路径，确保在 GitHub Pages 上也能正确显示
-    const processedMd = md.replace(
-      /src="assets\//g, 
-      'src="assets/'
-    );
+    // 直接使用原始 Markdown 内容，不进行路径替换
+    const processedMd = md;
     
     if (window.marked) {
       // 配置 marked 允许 HTML 标签
@@ -106,11 +103,8 @@
       grid.appendChild(card);
       // 加载对应 Markdown
       fetchText(it.path).then((text) => {
-        // 处理图片路径，确保在 GitHub Pages 上也能正确显示
-        const processedText = text.replace(
-          /src="assets\//g, 
-          'src="assets/'
-        );
+        // 直接使用原始文本内容，不进行路径替换
+        const processedText = text;
         
         if (window.marked) {
           // 配置 marked 允许 HTML 标签

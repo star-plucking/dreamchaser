@@ -6,6 +6,6 @@
 - 指导老师：LW
 - 战队愿景：以赛促研、以研带创，培养复合型工程人才
 
-<img src="../assets/gallery/DSC00492.JPG" style="width: 60%; height: auto; max-width: 800px;" alt="战队照片">
+<img src="assets/gallery/DSC00492.JPG" style="width: 60%; height: auto; max-width: 800px;" alt="战队照片">
 
 > 本页内容由 `content/intro.md` 渲染，可直接使用 Markdown 编辑。
