@@ -56,7 +56,31 @@
     const el = document.getElementById(elId);
     if (!el) return;
     const md = await fetchText(mdPath);
-    el.innerHTML = window.marked ? marked.parse(md) : md;
+          if (window.marked) {
+        // 配置 marked 允许 HTML 标签
+        try {
+          // 尝试使用新版本的配置方式
+          if (marked.use) {
+            marked.use({
+              breaks: true,
+              gfm: true
+            });
+          } else {
+            // 旧版本的配置方式
+            marked.setOptions({
+              breaks: true,
+              gfm: true
+            });
+          }
+          el.innerHTML = marked.parse(md);
+        } catch (e) {
+          // 如果配置失败，直接使用原始文本
+          console.warn('Marked configuration failed:', e);
+          el.innerHTML = md;
+        }
+      } else {
+        el.innerHTML = md;
+      }
   }
 
   function renderCards(containerId, items) {
@@ -83,7 +107,31 @@
       grid.appendChild(card);
       // 加载对应 Markdown
       fetchText(it.path).then((text) => {
-        content.innerHTML = window.marked ? marked.parse(text) : text;
+        if (window.marked) {
+          // 配置 marked 允许 HTML 标签
+          try {
+            // 尝试使用新版本的配置方式
+            if (marked.use) {
+              marked.use({
+                breaks: true,
+                gfm: true
+              });
+            } else {
+              // 旧版本的配置方式
+              marked.setOptions({
+                breaks: true,
+                gfm: true
+              });
+            }
+            content.innerHTML = marked.parse(text);
+          } catch (e) {
+            // 如果配置失败，直接使用原始文本
+            console.warn('Marked configuration failed:', e);
+            content.innerHTML = text;
+          }
+        } else {
+          content.innerHTML = text;
+        }
       });
     });
     container.appendChild(grid);

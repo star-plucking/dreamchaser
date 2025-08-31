@@ -45,7 +45,32 @@
 
     const md = await fetchText(cfg.contact || "content/contact.md");
     const el = document.getElementById("md-contact");
-    if (el) el.innerHTML = window.marked ? marked.parse(md) : md;
+    if (el) {
+      if (window.marked) {
+        // 配置 marked 允许 HTML 标签
+        try {
+          // 尝试使用新版本的配置方式
+          if (marked.use) {
+            marked.use({
+              breaks: true,
+              gfm: true
+            });
+          } else {
+            // 旧版本的配置方式
+            marked.setOptions({
+              breaks: true,
+              gfm: true
+            });
+          }
+        } catch (e) {
+          // 如果配置失败，记录警告
+          console.warn('Marked configuration failed:', e);
+        }
+        el.innerHTML = marked.parse(md);
+      } else {
+        el.innerHTML = md;
+      }
+    }
   }
 
   document.addEventListener("DOMContentLoaded", init);

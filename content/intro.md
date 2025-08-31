@@ -1,11 +1,11 @@
 # 战队介绍
 
-北京理工大学追梦战队（DreamChaser）成立于XXXX年，致力于机器人技术研发与竞赛实践，成员涵盖机械、电子、控制、计算机等多个学科方向。战队以“敢想敢为、追梦不止”为口号，持续在多项国内外机器人赛事中取得优异成绩。
+北京理工大学追梦战队（DreamChaser）成立于2018年，致力于机器人技术研发与竞赛实践，成员涵盖机械、电子、控制、计算机等多个学科方向。战队以“追梦无限，挑战至上”为口号，持续在多项国内外机器人赛事中取得优异成绩。
 
 - 研究方向：移动机器人、机械臂、无人系统、SLAM、视觉与感知、控制与规划等
-- 指导老师：XXX 教授 / XXX 老师
+- 指导老师：LW
 - 战队愿景：以赛促研、以研带创，培养复合型工程人才
 
-<img src="../assets/gallery/DSC00492.JPG" style="width: 60%; height: auto; max-width: 800px;" >
+<img src="assets/gallery/DSC00492.JPG" style="width: 60%; height: auto; max-width: 800px;" alt="战队照片">
 
 > 本页内容由 `content/intro.md` 渲染，可直接使用 Markdown 编辑。
