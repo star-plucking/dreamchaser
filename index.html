@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>北京理工大学追梦战队 DreamChaser</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="icon" href="assets/logo.png">
+  <meta name="description" content="北京理工大学追梦战队（DreamChaser）官网">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-logo-wrap"><img id="team-logo" src="assets/logo.png" alt="DreamChaser Logo"></span>
+        <span id="team-name">北京理工大学追梦战队（DreamChaser）</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html" aria-current="page">首页</a>
+        <a href="intro.html">战队介绍</a>
+        <a href="news.html">战队新闻</a>
+        <a href="robots.html">机器人介绍</a>
+        <a href="competitions.html">比赛介绍</a>
+        <a href="members.html">队员介绍</a>
+        <a href="honors.html">战队荣誉</a>
+        <a href="contact.html">联系方式</a>
+        <div class="nas-dropdown">
+          <a href="#" id="nas-btn" class="nas-btn">NAS <span class="dropdown-arrow">▼</span></a>
+          <div class="nas-dropdown-content">
+            <a href="#" id="nas-local">NAS (内网)</a>
+            <a href="http://nas2.dreamchaser.ink/" target="_blank">NAS2 (外网)</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="landing" aria-label="视频背景">
+      <div class="bg-video">
+        <video id="promo-video" autoplay muted loop playsinline>
+          <source id="promo-video-source" src="" type="video/mp4">
+        </video>
+      </div>
+      <div class="landing-overlay">
+        <div class="landing-inner">
+          <div class="landing-brand">
+            <img src="assets/white-logo.png" alt="DreamChaser Logo" class="landing-logo">
+          </div>
+          <h1 class="landing-title">追梦无限，挑战至上</h1>
+          <p class="landing-sub">移动、感知、控制与系统集成，在对抗与协作中持续精进。</p>
+          <div class="landing-actions">
+            <a id="btn-see-more" href="#more" class="btn-primary">查看更多</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="more" class="section">
+      <div class="container">
+        <div class="media">
+          <h3>宣传图片</h3>
+          <div id="gallery" class="gallery"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>© <span id="current-year"></span> 北京理工大学追梦战队（DreamChaser）</p>
+        <div class="footer-links">
+          <a href="https://space.bilibili.com/411495552" target="_blank" rel="noopener">Bilibili</a>
+          <a href="https://github.com/dreamchaser-team" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>

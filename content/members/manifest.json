@@ -1,0 +1,5 @@
+[
+  { "title": "张三 - 队长（控制与规划）", "path": "content/members/zhangsan.md" },
+  { "title": "李四 - 技术负责人（计算机视觉）", "path": "content/members/lisi.md" },
+  { "title": "J.BK - 机械负责人（机构设计）", "path": "content/members/wangwu.md" }
+]
