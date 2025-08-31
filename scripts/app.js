@@ -89,16 +89,8 @@
     
     nasLocalBtn.addEventListener("click", function(e) {
       e.preventDefault();
-      
-      // 检测是否为局域网环境
-      const isLocalNetwork = window.location.hostname === 'localhost' || 
-                           window.location.hostname === '127.0.0.1' ||
-                           window.location.hostname.startsWith('192.168.') ||
-                           window.location.hostname.startsWith('10.') ||
-                           window.location.hostname.startsWith('172.');
-      
-      const nasUrl = isLocalNetwork ? 'http://nas.dreamchaser.ink' : 'http://nas2.dreamchaser.ink';
-      window.open(nasUrl, '_blank');
+      // 直接跳转到 NAS2 (外网)
+      window.open('http://nas2.dreamchaser.ink', '_blank');
     });
   }
 

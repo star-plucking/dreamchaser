@@ -39,16 +39,8 @@
     
     nasLocalBtn.addEventListener("click", function(e) {
       e.preventDefault();
-      
-      // 检测是否为局域网环境
-      const isLocalNetwork = window.location.hostname === 'localhost' || 
-                           window.location.hostname === '127.0.0.1' ||
-                           window.location.hostname.startsWith('192.168.') ||
-                           window.location.hostname.startsWith('10.') ||
-                           window.location.hostname.startsWith('172.');
-      
-      const nasUrl = isLocalNetwork ? 'http://nas.dreamchaser.ink' : 'http://nas2.dreamchaser.ink';
-      window.open(nasUrl, '_blank');
+      // 直接跳转到 NAS2 (外网)
+      window.open('http://nas2.dreamchaser.ink', '_blank');
     });
   }
 
@@ -56,31 +48,38 @@
     const el = document.getElementById(elId);
     if (!el) return;
     const md = await fetchText(mdPath);
-          if (window.marked) {
-        // 配置 marked 允许 HTML 标签
-        try {
-          // 尝试使用新版本的配置方式
-          if (marked.use) {
-            marked.use({
-              breaks: true,
-              gfm: true
-            });
-          } else {
-            // 旧版本的配置方式
-            marked.setOptions({
-              breaks: true,
-              gfm: true
-            });
-          }
-          el.innerHTML = marked.parse(md);
-        } catch (e) {
-          // 如果配置失败，直接使用原始文本
-          console.warn('Marked configuration failed:', e);
-          el.innerHTML = md;
+    
+    // 处理图片路径，确保在 GitHub Pages 上也能正确显示
+    const processedMd = md.replace(
+      /src="assets\//g, 
+      'src="assets/'
+    );
+    
+    if (window.marked) {
+      // 配置 marked 允许 HTML 标签
+      try {
+        // 尝试使用新版本的配置方式
+        if (marked.use) {
+          marked.use({
+            breaks: true,
+            gfm: true
+          });
+        } else {
+          // 旧版本的配置方式
+          marked.setOptions({
+            breaks: true,
+            gfm: true
+          });
         }
-      } else {
-        el.innerHTML = md;
+        el.innerHTML = marked.parse(processedMd);
+      } catch (e) {
+        // 如果配置失败，直接使用原始文本
+        console.warn('Marked configuration failed:', e);
+        el.innerHTML = processedMd;
       }
+    } else {
+      el.innerHTML = processedMd;
+    }
   }
 
   function renderCards(containerId, items) {
@@ -107,6 +106,12 @@
       grid.appendChild(card);
       // 加载对应 Markdown
       fetchText(it.path).then((text) => {
+        // 处理图片路径，确保在 GitHub Pages 上也能正确显示
+        const processedText = text.replace(
+          /src="assets\//g, 
+          'src="assets/'
+        );
+        
         if (window.marked) {
           // 配置 marked 允许 HTML 标签
           try {
@@ -123,14 +128,14 @@
                 gfm: true
               });
             }
-            content.innerHTML = marked.parse(text);
+            content.innerHTML = marked.parse(processedText);
           } catch (e) {
             // 如果配置失败，直接使用原始文本
             console.warn('Marked configuration failed:', e);
-            content.innerHTML = text;
+            content.innerHTML = processedText;
           }
         } else {
-          content.innerHTML = text;
+          content.innerHTML = processedText;
         }
       });
     });
