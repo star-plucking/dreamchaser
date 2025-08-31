@@ -34,7 +34,7 @@
   function setAttr(id, attr, value) { const el = document.getElementById(id); if (el) el.setAttribute(attr, value); }
 
   function initNasButton() {
-    const nasLocalBtn = document.getElementById("nasLocalBtn");
+    const nasLocalBtn = document.getElementById("nas-local");
     if (!nasLocalBtn) return;
     
     nasLocalBtn.addEventListener("click", function(e) {
